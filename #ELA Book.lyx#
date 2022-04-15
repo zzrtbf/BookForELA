@@ -1,0 +1,278 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-book
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Enjoyable Linear Algebra
+\end_layout
+
+\begin_layout Author
+zz
+\end_layout
+
+\begin_layout Date
+2022.4
+\end_layout
+
+\begin_layout Chapter*
+欢迎来到ELA！
+\end_layout
+
+\begin_layout Standard
+在这里，您将学会：
+\end_layout
+
+\begin_layout Enumerate
+向量与矩阵
+\end_layout
+
+\begin_layout Enumerate
+特征的问题
+\end_layout
+
+\begin_layout Enumerate
+一点点二次型
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+向量与矩阵
+\end_layout
+
+\begin_layout Section
+向量
+\end_layout
+
+\begin_layout Standard
+您将看到：
+\end_layout
+
+\begin_layout Itemize
+向量
+\end_layout
+
+\begin_layout Itemize
+向量组
+\end_layout
+
+\begin_layout Itemize
+向量的操作
+\end_layout
+
+\begin_layout Itemize
+向量的坐标
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+向量
+\series default
+(vector)，在日常生活中，代表着空间中两个物体的相对位置关系。一个起点、一个终点就可确定一个向量。人们通常将一个向量想象为一个从起点指向终点的箭头，比如从
+太阳到地球的箭头、从地面上的观察者到天空中各类星辰的箭头（我们将不考虑相对论的时空弯曲）。这也是大多数理工科专业内的认识。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/1.1向量.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+这里有一个向量
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们使用一个符号来表示一个向量：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\boldsymbol{v}
+\end{equation}
+
+\end_inset
+
+而在数学专业里，向量的概念则更加广泛，我们后面有机会再介绍。
+\end_layout
+
+\begin_layout Standard
+很明显，人们经常不止观察并分析一个物体，就像天文观测者会观测多颗星辰一样。人们把几个向量放在一起，就形成了一个向量组。我们一般把这些向量放在一个中括号里:
+\begin_inset Formula 
+\begin{equation}
+[\boldsymbol{u},\boldsymbol{v},\boldsymbol{w}]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+正如单独的数字意义不大一样（其实数字也可以被视为向量），向量也有相应的运算。比如人们行走路线的向量可以首尾相接的连起来，人们观察的物体也会远离或接近观察者。向量
+的两个基本运算为：
+\end_layout
+
+\begin_layout Itemize
+加法(addition)。两个向量可以按照平行四边形定则相加成为一个新向量。
+\end_layout
+
+\begin_layout Itemize
+数乘(scalar multiplication)。一个向量可以
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/1.2向量加法.svg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/1.2向量数乘.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+向量的加法与数乘
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
