@@ -6,6 +6,10 @@
 \origin unavailable
 \textclass ctex-book
 \use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-named
+\end_modules
 \maintain_unincluded_children false
 \language chinese-simplified
 \language_package default
@@ -95,11 +99,11 @@ zz
 \end_layout
 
 \begin_layout Chapter*
-欢迎来到ELA！
+前言
 \end_layout
 
 \begin_layout Standard
-在这里，您将学会：
+欢迎来到ELA！在这里，您将学会：
 \end_layout
 
 \begin_layout Enumerate
@@ -128,7 +132,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section
-向量
+向量与向量空间
 \end_layout
 
 \begin_layout Standard
@@ -136,15 +140,15 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Itemize
-向量
+向量的概念
 \end_layout
 
 \begin_layout Itemize
-向量组
+什么是向量空间
 \end_layout
 
 \begin_layout Itemize
-向量的运算
+向量可以怎么变化
 \end_layout
 
 \begin_layout Standard
@@ -152,9 +156,9 @@ LatexCommand tableofcontents
 \series bold
 向量
 \series default
-(vector)，在日常生活中，代表着空间中两个物体的相对位置关系。一个起点、一个终点就可确定一个向量。所以向量具有长度与方向两个关键要素。人们通常将一个向量想
-象为一个从起点指向终点的箭头，比如从太阳到地球的箭头、从地面上的观察者到天空中各类星辰的箭头（我们将不考虑相对论的时空弯曲）。这也是大多数理工科专业内的通常认识
-。
+(vector)，在日常生活中，代表着空间中两个物体的相对位置关系。一个起点、一个终点就可确定一个向量。人们通常将一个向量想象为一个从起点指向终点的箭头，比如从
+太阳到地球的箭头、从地面上的观察者到天空中各类星辰的箭头（我们将不考虑相对论的时空弯曲）。向量的概念不局限于位置关系，比如物体运动的速度也可用向量表示。所以，只
+要有方向，在这一方向有大小的量就可以被称为向量。向量具有大小与方向两个关键要素。这也是大多数理工科专业内的通常认识。
 \end_layout
 
 \begin_layout Standard
@@ -206,11 +210,11 @@ status open
 
 \end_inset
 
-而在数学专业里，向量的概念则更加广泛，我们后面有机会再介绍。
+而在数学家的眼中，向量的概念则更加广泛，我们后面会再介绍。
 \end_layout
 
 \begin_layout Standard
-很明显，人们经常不止观察并分析一个物体，就像天文观测者会观测多颗星辰一样。人们把几个向量放在一起，就形成了一个向量组。我们一般把这些向量放在一个中括号里:
+很明显，人们经常不止观察并分析一个物体，就像天文观测者会观测多颗星辰一样。人们把几个向量放在一起，就形成了一个向量组。我们一般把这些向量放在一个中括号里：
 \begin_inset Formula 
 \begin{equation}
 [\boldsymbol{u},\boldsymbol{v},\boldsymbol{w}]
@@ -222,12 +226,20 @@ status open
 \end_layout
 
 \begin_layout Standard
-正如单独的数字意义不大一样（其实数字也可以被视为向量），向量也有相应的运算。比如人们行走路线的向量可以首尾相接的连起来，人们观察的物体也会远离或接近观察者。向量
-的两个基本运算为：
+如果向量在多些呢？正如我们之前说过的，在一个数轴上，原点到任意点的“箭头”都可以被看做是向量。在一个三维空间中，原点到任意位置的“箭头”也可以被看做是向量。
+\end_layout
+
+\begin_layout Standard
+到此为止，你应该已经对向量有了大概的认识，并且你可能已经在脑海中想象了各种各样的向量或向量组的例子，比如天空中星辰相对于欣赏它们的你的位置、喜欢的小吃店相对于你
+的位置、一罐空气中各个气体分子的速度向量等等。
+\end_layout
+
+\begin_layout Standard
+正如单独的数字意义不大一样，向量也有相应的运算。比如人们行走路线的向量可以首尾相接的连起来，人们观察的物体也会远离或接近观察者。向量的两个基本运算为：
 \end_layout
 
 \begin_layout Itemize
-加法(addition)。两个向量可以按照平行四边形定则相加成为一个新向量。各个向量的长度不变，而新向量的方向一般与之前的向量不变。
+加法(addition)。两个向量可以按照平行四边形定则相加成为一个新向量。各个向量的长度不变，而新向量的方向一般与之前的不同。
 \end_layout
 
 \begin_layout Itemize
@@ -281,6 +293,74 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+线性变换基本定理
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+设
+\begin_inset Formula $V$
+\end_inset
+
+是有限维向量空间，
+\begin_inset Formula $T$
+\end_inset
+
+是从
+\begin_inset Formula $V$
+\end_inset
+
+到
+\begin_inset Formula $W$
+\end_inset
+
+的线性变换，则有：
+\begin_inset Formula 
+\begin{eqnarray*}
+\mathrm{dim\ }V & = & \mathrm{dim\ null\ }T+\mathrm{range\ }T.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+到底为什么要学习线性代数
+\end_layout
+
+\begin_layout Standard
+在读完前一节的内容后，读者应该已经对向量的概念有了基本的认识。在进行后续知识的学习之前，我想要先讨论一下到底为什么要学习线性代数这门课。你们也许经常听到“线性代
+数非常重要”，“它在日后的学习中经常重要”等等的说法。可这显然说的并不明白。线性代数很可能是大部分理工科专业的新生进入大学后所学习的第一门数学课，它也确实具有由
+数学抽象所带来的巨大威力与深远意义。如果学生们在一开始就对这门课程的意义没有清晰的把握，后面的课程结构设计又不能适应新生的知识基础、专业特色和认知习惯的话，新生
+很可能在刚进入大学后就陷入对学习与专业的迷茫中。因此，有必要讨论一下线性代数为何会有如此巨大的影响，以至于几乎所有的理工科专业都要学习这门课。
+\end_layout
+
+\begin_layout Standard
+前文已经提到，在大部分理工科专业的认知中，人们经常把向量想象为现实空间中的一个箭头。然而在数学专业中，向量则是一个抽象概念。数学知识之所以强大，很重要的原因就是
+它的抽象性。抽象是相对于具象而言的。抽象就是把带有相同性质的不同事物归为一类，并在这个高于事物具体细节的层次上进行研究与讨论。比如，物理学家们经常把各种物体抽象
+为一个质点。一旦把质点这一抽象概念的运动规律研究清楚，那么我们就可以把这一运动规律应用于一切可以被抽象为质点的物体上，分析他们的运动过程。小到原子的碰撞，大到行
+星的运行规律，皆可以用质点的运动规律来描述。于是我们知道，知识概念的抽象性会带来这一知识应用范围的广泛性。我们现在将向量视为可以相加和数乘的箭头。现在我们来看一
+下数学家们是如何看待向量的。相比于将向量视为“箭头”，数学家们的观点则相当抽象，甚至看起来有些“激进”。在数学家看来：
+\end_layout
+
+\begin_layout Definition
+向量的定义
+\end_layout
+
+\begin_layout Definition
+任何可以进行加法与数乘运算的东西都可以被称为向量
 \end_layout
 
 \end_body
